@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroLimit Compressor</title>
+    
+    <!-- Google Fonts for High Impact Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    
+    <!-- Abstract blurred background elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <!-- Main container using Bento Grid -->
+    <main class="bento-container">
+        
+        <header class="bento-header">
+            <h1 class="display-title">ZeroLimit.</h1>
+            <p class="subtitle">Sin límites de peso. Compresión infinita en la nube.</p>
+        </header>
+
+        <section class="bento-panel upload-panel" id="drop-zone">
+            <div class="upload-content">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <h2 class="panel-title">Suelta tu obra maestra</h2>
+                <p class="panel-desc">Arrastra un video de cualquier tamaño (5GB+ soportado) o haz clic para explorar.</p>
+                <input type="file" id="file-input" accept="video/*" hidden>
+            </div>
+            
+            <div class="file-details hidden" id="file-details">
+                <h3 id="filename" class="file-name">-</h3>
+                <p id="filesize" class="file-size">-</p>
+            </div>
+        </section>
+
+        <section class="bento-panel config-panel">
+            <h3 class="panel-title">Ajustes de Motor</h3>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="quality" value="high" checked>
+                    <span class="custom-radio"></span> Alta Calidad (Poca compresión)
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="quality" value="medium">
+                    <span class="custom-radio"></span> Óptimo (Web & Móvil)
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="quality" value="low">
+                    <span class="custom-radio"></span> Extremo (Máxima reducción)
+                </label>
+            </div>
+            <button id="btn-compress" class="btn-primary" disabled>INICIAR IGNICIÓN</button>
+        </section>
+
+        <section class="bento-panel progress-panel" id="progress-panel">
+            <div class="status-indicator">
+                <span id="status-text" class="status-text">ESPERANDO...</span>
+                <span id="progress-percent" class="percent-text">0%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <a id="btn-download" class="btn-success hidden" href="#" download>DESCARGAR RESULTADO</a>
+            <p id="error-msg" class="error-msg hidden"></p>
+        </section>
+
+    </main>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
