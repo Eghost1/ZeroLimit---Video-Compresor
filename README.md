@@ -28,7 +28,7 @@ Todo diseñado con una estética Súper Senior (Glassmorfismo, Bento Grid y Tipo
 Primero clona este repositorio desde GitHub:
 
 ```bash
-git clone https://github.com/TU-USUARIO/zero-limit-compressor.git
+git clone https://github.com/Eghost1/zero-limit-compressor.git
 cd zero-limit-compressor
 ```
 
