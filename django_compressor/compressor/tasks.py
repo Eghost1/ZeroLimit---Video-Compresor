@@ -40,6 +40,8 @@ def compress_video(task_id, quality='medium'):
             '-vcodec', 'libx264',
             '-crf', crf_value,
             '-preset', 'fast',
+            '-pix_fmt', 'yuv420p',  # Fix for Windows Media Player incompatibility
+            '-acodec', 'aac',       # Ensure audio is compliant
             output_path
         ]
         
